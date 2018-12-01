@@ -1,6 +1,6 @@
 /*
-Executable commands must always use package main.
-That's different for a library: package <library's name>
+Les commandes exécutables doivent déclarer un package "main".
+C'est différent dans le cas d'une librairie, où on utilisera package <librairie>
 */
 package main
 
@@ -8,8 +8,7 @@ import "fmt"
 
 func main() {
 	/*
-		Package fmt implements formatted I/O with functions analogous to C's printf and scanf.
-		The format 'verbs' are derived from C's but are simpler.
+		Le package fmt implémente des fonction d'E/S analogues à printf et scanf.
 	*/
 	fmt.Println("Hello world")
 }
