@@ -26,6 +26,10 @@ func printfShortAssignement() {
 	fmt.Printf("Hello %s\n", word)
 }
 
+/*
+	Le type interface est un type indéfini. Il ne correspond
+	à rien de précis.
+*/
 func printImplicitType(value interface{}) {
 	/*
 		Il n'est pas obligatoire de préciser le type de la variable
