@@ -10,7 +10,7 @@ func printf() {
 		avec l'opérateur := qui donne word := "World" (pas besoin d'utiliser le mot-clé var).
 	*/
 	var word = "World"
-	fmt.Printf("Hello %s\n", word)
+	fmt.Printf("Hello %s\n", word) // Hello World
 }
 
 func printfShortAssignement() {
@@ -23,7 +23,7 @@ func printfShortAssignement() {
 	*/
 	word := "World"
 	word = "Short"
-	fmt.Printf("Hello %s\n", word)
+	fmt.Printf("Hello %s\n", word) // Hello Short
 }
 
 /*
@@ -42,9 +42,32 @@ func printImplicitType(value interface{}) {
 func main() {
 	printf()
 	printfShortAssignement()
-	printImplicitType("str")
-	printImplicitType(1)
-	printImplicitType(1.4)
-	printImplicitType(-4)
-	printImplicitType(false)
+
+	/*
+		bool Booléen
+
+		string Chaîne de charactères
+
+		int  int8  int16  int32  int64
+		uint uint8 uint16 uint32 uint64 uintptr
+		Entiers. Utiliser int par défaut, à moins d'avoir une raison spécifique.
+
+		byte // alias for uint8
+
+		rune // alias for int32
+		// represents a Unicode code point
+
+		float32 float64
+
+		complex64 complex128
+
+	*/
+	printImplicitType('a')      // Type: int32 (alias rune) Value: 97 (U+0061) sur 1 byte (car encodé en UTF-8 ~ ASCII + Unicode)
+	printImplicitType('ä')      // Type: int32 (alias rune) Value: 228 (U+00E4) sur 2 bytes (idem)
+	printImplicitType('\u00E4') // Type: int32 (alias rune) Value: 228 (U+00E4) sur 2 bytes (idem)
+	printImplicitType("str")    // Type: string Value: str
+	printImplicitType(1)        // Type: int Value: 1
+	printImplicitType(1.4)      // Type: float64 Value: 1.4
+	printImplicitType(-4)       // Type: int Value: -4
+	printImplicitType(false)    // Type: bool Value: false
 }
